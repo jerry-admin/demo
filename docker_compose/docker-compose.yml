@@ -1,0 +1,5 @@
+test_tomcat:
+  image: 192.168.189.129:5000/centos_tomcat:${TAG}
+  container_name: test_tomcat
+  ports:
+    - 8080:8080

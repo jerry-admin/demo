@@ -1,0 +1,7 @@
+FROM 192.168.189.129:5000/centos_tomcat:base
+COPY root.war /data/tomcat/webapps/
+COPY devops-workshop-1.0.0.war  /data/tomcat/webapps/
+ENV JAVA_HOME=/usr/local/jdk
+ENV CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+ENV PATH=$JAVA_HOME/bin:$PATH
+ENTRYPOINT ["/data/tomcat/bin/catalina.sh","run"]
