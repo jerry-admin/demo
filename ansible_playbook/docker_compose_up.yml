@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: pull images from registry
-      shell: docker pull 192.168.189.129:5000/centos_tomcat:{{ TAG }}
+      shell: docker pull 192.168.150.128:5000/centos_tomcat:{{ TAG }}
     - name: copy compose file from local to remote
       copy: src={{ COMPOSE_FILE }} dest=/tmp/docker-compose.yml
     - name: run docker-compose
